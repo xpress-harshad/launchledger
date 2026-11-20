@@ -1,6 +1,6 @@
 export const branding = {
   name: 'LaunchLedger',
-  studio: 'Kalpa Octant'
+  studio: 'LaunchLedger'
 };
 
 export const phases = ['Before launch', 'Launch day', 'Client handover'];
