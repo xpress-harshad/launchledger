@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A self-hosted workspace for website launches, migrations, and client handovers.">
+  <title>LaunchLedger</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="top">
+    <div class="shell top-inner">
+      <div class="brand"><span class="mark" aria-hidden="true">✓</span><strong id="brand">LaunchLedger</strong></div>
+      <div class="actions">
+        <button id="import" class="quiet">Import backup</button>
+        <button id="new">New project</button>
+        <input id="backup-file" type="file" accept=".json,application/json" hidden>
+      </div>
+    </div>
+  </header>
+  <main class="shell">
+    <div class="intro">
+      <div><h1>Launch workspace</h1><p>Track what’s ready, what’s blocking launch, and what the client needs next.</p></div>
+      <label class="project-picker">Project<select id="projects"></select></label>
+    </div>
+    <div id="workspace" class="workspace">
+      <section id="checklist" aria-label="Launch checklist"></section>
+      <aside>
+        <section class="card overview" aria-labelledby="project-name">
+          <div class="row"><span id="preset" class="tag"></span><button id="edit" class="quiet small">Edit project</button></div>
+          <h2 id="project-name"></h2>
+          <p id="project-details"></p>
+          <div class="row progress-row"><strong id="progress-text"></strong><strong id="percent"></strong></div>
+          <progress id="progress" max="100" aria-label="Checklist completion"></progress>
+          <p id="blockers" class="readiness"></p>
+        </section>
+        <section class="card exports">
+          <h2>Client handover</h2>
+          <p>Download a shareable report with progress and handover notes. Internal notes stay in your workspace and backups.</p>
+          <button id="report" class="wide">Download handover report</button>
+          <button id="backup" class="quiet wide">Download project backup</button>
+        </section>
+        <p id="storage-note" class="storage">Projects are saved in this browser. Download a backup to move them to another device.</p>
+      </aside>
+    </div>
+    <p id="notice" role="status"></p>
+  </main>
+
+  <dialog id="project-dialog">
+    <form id="project-form">
+      <h2 id="form-title"></h2>
+      <label>Project name<input name="title" required maxlength="100" placeholder="e.g. Studio website launch"></label>
+      <label>Client<input name="client" maxlength="100" placeholder="e.g. Cedar Studio"></label>
+      <label>Website domain<input name="domain" maxlength="160" placeholder="e.g. example.com"></label>
+      <label id="preset-label">Checklist template<select name="preset"></select></label>
+      <div class="actions dialog-actions"><button type="button" id="cancel" class="quiet">Cancel</button><button type="submit">Save project</button></div>
+    </form>
+  </dialog>
+</body>
+</html>

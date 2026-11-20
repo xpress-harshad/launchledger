@@ -1,0 +1,64 @@
+:root{color-scheme:light;--ink:#16251e;--muted:#50635a;--paper:#f4f7f2;--line:#d9e3da;--accent:#164e36;--light:#e2f0e5;--amber:#764213;font-family:system-ui,sans-serif;color:var(--ink);background:var(--paper)}
+*{box-sizing:border-box}
+body{margin:0}
+.shell{width:min(1140px,calc(100% - 52px));margin:auto}
+.top{background:#fff;border-bottom:1px solid var(--line)}
+.top-inner,.row,.actions,.intro,.brand,.task-title{display:flex;align-items:center}
+.top-inner,.row,.intro{justify-content:space-between}
+.top-inner{min-height:72px;gap:14px}
+.brand,.actions{gap:10px}
+.brand strong{font-size:1.12rem;letter-spacing:-.035em}
+.mark{display:grid;place-items:center;width:34px;height:34px;border-radius:9px;background:var(--accent);color:white;font-weight:bold}
+button,input,textarea,select{font:inherit}
+button{background:var(--accent);color:white;border:1px solid var(--accent);border-radius:8px;padding:10px 14px;font-weight:650;font-size:.9rem;cursor:pointer}
+button:hover{background:#226a4d}
+button.quiet{background:#fff;color:var(--accent);border-color:var(--line)}
+button.quiet:hover{background:var(--light)}
+button.small{padding:6px 9px}
+.wide{width:100%;margin-top:9px}
+.intro{margin:47px 0 28px;gap:24px;align-items:end}
+h1,h2,h3,p{margin:0}
+h1{font-size:clamp(2.2rem,5vw,3.65rem);letter-spacing:-.067em;line-height:1.05;margin-bottom:12px}
+h2{font-size:1.2rem;letter-spacing:-.025em}
+p{color:var(--muted);line-height:1.55}
+.workspace{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,340px);gap:24px;align-items:start}
+.card,.phase{background:#fff;border:1px solid var(--line);border-radius:15px;overflow-wrap:anywhere}
+.card{padding:22px;margin-bottom:14px}
+.phase{margin-bottom:16px;overflow:hidden}
+.phase-title{background:#e9f0e8;padding:15px 20px;gap:12px}
+.phase-title span,.storage{color:var(--muted);font-size:.875rem}
+.task{padding:17px 20px}
+.task+.task{border-top:1px solid var(--line)}
+.task-title{align-items:flex-start;gap:10px;font-weight:700}
+.task-title input{width:18px;height:18px;margin:2px 0 0;flex:none;accent-color:var(--accent)}
+.task p,.task details{margin:5px 0 0 28px;font-size:.9rem}
+.task details{margin-top:10px}
+summary{cursor:pointer;color:var(--accent);font-weight:600}
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.tag{border-radius:6px;padding:4px 8px;background:var(--light);color:var(--accent);font-size:.8rem;font-weight:700}
+.task .tag{background:#fff1df;color:var(--amber);margin-left:auto;white-space:nowrap}
+.overview .row{gap:8px;flex-wrap:wrap}
+.overview h2{font-size:1.65rem;margin-top:17px}
+.overview p,.exports p{margin-top:6px;font-size:.92rem}
+.progress-row{margin-top:20px;font-size:.9rem}
+progress{width:100%;height:10px;appearance:none;display:block;margin-top:9px;border-radius:10px;border:0;background:var(--light);overflow:hidden;accent-color:var(--accent)}
+progress::-webkit-progress-bar{background:var(--light)}
+progress::-webkit-progress-value{background:var(--accent)}
+progress::-moz-progress-bar{background:var(--accent)}
+.overview .readiness{padding:9px 10px;border-radius:8px;background:var(--light);color:var(--accent);margin-top:16px}
+.overview .readiness.pending{background:#fff1df;color:var(--amber)}
+.storage{padding:0 4px}
+label:not(.task-title){display:grid;gap:5px;font-size:.875rem;font-weight:650}
+input:not([type=checkbox]),select,textarea{width:100%;border:1px solid #afc0b4;border-radius:7px;background:white;color:var(--ink);padding:9px 10px}
+select{appearance:none;background:linear-gradient(45deg,transparent 50%,var(--accent) 50%) right 13px center/5px 5px no-repeat,linear-gradient(135deg,var(--accent) 50%,transparent 50%) right 8px center/5px 5px no-repeat,#fff;padding-right:25px}
+.project-picker{min-width:min(100%,225px)}
+textarea{resize:vertical;min-height:70px}
+:focus-visible{outline:2px solid #24754e;outline-offset:3px}
+dialog{width:min(460px,calc(100% - 28px));border:1px solid var(--line);border-radius:16px;padding:24px;color:var(--ink)}
+dialog::backdrop{background:#14251db3}
+dialog form{display:grid;gap:14px}
+.dialog-actions{justify-content:flex-end;margin-top:6px}
+[hidden]{display:none!important}
+#notice{margin:14px 0 24px}
+@media(max-width:760px){.workspace{grid-template-columns:1fr}.workspace aside{grid-row:1}.intro{display:grid;align-items:start;margin-top:32px}}
+@media(max-width:480px){.shell{width:calc(100% - 24px)}.brand strong{font-size:1rem}.brand,.actions{gap:6px}.top button{padding:8px;font-size:.8rem}.top-inner{gap:7px}.mark{width:25px;height:25px}.notes{grid-template-columns:1fr}.phase-title,.task{padding-left:12px;padding-right:12px}}

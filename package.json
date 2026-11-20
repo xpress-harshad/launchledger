@@ -1,0 +1,10 @@
+{
+  "name": "launchledger",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A self-hosted website launch and handover workspace.",
+  "type": "module",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "scripts": { "start": "node server.mjs" }
+}
